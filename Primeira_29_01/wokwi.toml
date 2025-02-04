@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/Primeira_29_01.hex'
+elf = 'build/Primeira_29_01.elf'

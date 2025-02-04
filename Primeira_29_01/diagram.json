@@ -1,0 +1,71 @@
+{
+    "version": 1,
+    "author": "Guilherme Pereira Dutra",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "wokwi-pi-pico",
+        "id": "pico",
+        "top": -32.05,
+        "left": 109.15,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led_vermelho",
+        "top": 44.4,
+        "left": -149.8,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led_amarelo",
+        "top": 111.6,
+        "left": -149.8,
+        "attrs": { "color": "yellow" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led_verde",
+        "top": 178.8,
+        "left": -149.8,
+        "attrs": { "color": "green" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "resistor1",
+        "top": 80.75,
+        "left": -67.2,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "resistor2",
+        "top": 147.95,
+        "left": -67.2,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "resistor3",
+        "top": 215.15,
+        "left": -67.2,
+        "attrs": { "value": "330" }
+      }
+    ],
+    "connections": [
+        [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+        [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+        [ "led_vermelho:C", "pico:GND.2", "green", [ "v0", "h-28.4", "v-38.4" ] ],
+        [ "led_vermelho:A", "resistor1:1", "green", [ "v0" ] ],
+        [ "pico:GND.2", "led_amarelo:C", "green", [ "h-278.4", "v124.8", "h28.4" ] ],
+        [ "pico:GND.2", "led_verde:C", "green", [ "h-278.4", "v172.8", "h28.4" ] ],
+        [ "led_amarelo:A", "resistor2:1", "green", [ "v0" ] ],
+        [ "led_verde:A", "resistor3:1", "green", [ "h38.4", "v28.8" ] ],
+        [ "resistor2:2", "pico:GP12", "green", [ "v0", "h75.6", "v-19.2" ] ],
+        [ "resistor1:2", "pico:GP13", "green", [ "v0" ] ],
+        [ "resistor3:2", "pico:GP11", "green", [ "v0", "h75.6", "v-105.6" ] ]
+      ],
+      "dependencies": {}
+    }
+  
